@@ -166,9 +166,7 @@ class _reset_passwordState extends State<reset_password> {
 
   void ResetForm() async {
     final multipartRequest = new http.MultipartRequest(
-        "POST",
-        Uri.parse(
-            "https://dnpprojects.com/demo/comshop/api/driverResetPasswordForm"));
+        "POST", Uri.parse("https://comchop.com/api/driverResetPasswordForm"));
 
     multipartRequest.fields.addAll({
       "password": _password.text,

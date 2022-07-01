@@ -164,8 +164,8 @@ class _otp_screenState extends State<otp_screen> {
   }
 
   void otpver() async {
-    final multipartRequest = new http.MultipartRequest("POST",
-        Uri.parse("https://dnpprojects.com/demo/comshop/api/dirverOtp"));
+    final multipartRequest = new http.MultipartRequest(
+        "POST", Uri.parse("https://comchop.com/api/dirverOtp"));
 
     multipartRequest.fields.addAll({
       "otp": _otp.text,

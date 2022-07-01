@@ -112,9 +112,7 @@ class forgot_password_screen extends StatelessWidget {
 
   void emailver(BuildContext context) async {
     final multipartRequest = new http.MultipartRequest(
-        "POST",
-        Uri.parse(
-            "https://dnpprojects.com/demo/comshop/api/driverforgetPassword"));
+        "POST", Uri.parse("https://comchop.com/api/driverforgetPassword"));
 
     multipartRequest.fields.addAll({
       "email_address": _email.text,

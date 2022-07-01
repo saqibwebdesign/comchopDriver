@@ -159,8 +159,8 @@ class _driving_license_backsideState extends State<driving_license_backside> {
   }
 
   Future uploadImage() async {
-    final multipartRequest = new http.MultipartRequest("POST",
-        Uri.parse("https://dnpprojects.com/demo/comshop/api/DriverRegister"));
+    final multipartRequest = new http.MultipartRequest(
+        "POST", Uri.parse("https://comchop.com/api/DriverRegister"));
 
     multipartRequest.fields.addAll({
       "first_name": widget.firstname,

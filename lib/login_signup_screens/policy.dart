@@ -56,6 +56,7 @@ class _User_Aggrement_ScreenState extends State<User_Aggrement_Screen> {
                         '3.Traffic between the merchant and Rider.\n'
                         '4.Traffic between the merchant and the customer.\n'
                         'These distances are only attained if users provide access to their live location while using the app. '
+                        'If the user does not provide access to their live location, the app will not be able to calculate the approximate delivery time.\n'
                         'Rider provide their current location so that Comchopp can dispatch them to the nearest merchant and corresponding customers. '
                         'Rider provide background location access so that Comchopp can track their journey from their to their destination. This helps in the tracking of where the delivery is to ensure that the time allocated for the delivery is upheld as well mitigating the risk of theft. '
                         'When a Rider shares his live location, he is accountable to get the food to the customer. ',

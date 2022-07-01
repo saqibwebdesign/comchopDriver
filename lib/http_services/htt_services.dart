@@ -15,7 +15,7 @@ import 'package:http/http.dart' as http;
 class http_service with ChangeNotifier {
   var latitude;
   var longtitude;
-  var baseurl = 'https://dnpprojects.com/demo/comshop/api/';
+  var baseurl = 'https://comchop.com/api/';
   final _prefs = SharedPreferences.getInstance();
 
   bool islogin = false;
