@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderRadius: BorderRadius.circular(6)),
                           color: Color.fromRGBO(252, 186, 24, 1),
                           child: Text(
-                            'Signin',
+                            'Sign in',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.white,
@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderRadius: BorderRadius.circular(6)),
                           color: Color.fromRGBO(252, 186, 24, 1),
                           child: Text(
-                            'Signup',
+                            'Sign up',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.white,

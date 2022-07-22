@@ -22,9 +22,7 @@ class _signup_screenState extends State<signup_screen> {
   final TextEditingController _password = TextEditingController();
   final TextEditingController _city = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-  bool _termsChecked = false;
-  // RegExp regex =
-  //     RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +137,7 @@ class _signup_screenState extends State<signup_screen> {
                                   controller: _lname,
                                   validator: (String? value) {
                                     if (value!.isEmpty) {
-                                      return "please enter second name";
+                                      return "Please enter second name";
                                     }
                                     return null;
                                   },
@@ -251,8 +249,12 @@ class _signup_screenState extends State<signup_screen> {
                         child: TextFormField(
                           controller: _phone,
                           validator: (String? value) {
-                            if (value!.isEmpty) {
-                              return "please enter phone Number";
+                            String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+                            RegExp regExp = new RegExp(patttern);
+                            if (value!.length == 0) {
+                              return 'Please enter mobile number';
+                            } else if (!regExp.hasMatch(value)) {
+                              return 'Please enter valid mobile number';
                             }
                             return null;
                           },
@@ -299,16 +301,28 @@ class _signup_screenState extends State<signup_screen> {
                         padding: const EdgeInsets.only(left: 0),
                         child: TextFormField(
                           controller: _password,
-                          obscureText: true,
+                          obscureText: _isObscure,
                           validator: (var value) {
                             if (value!.isEmpty) {
-                              return "please enter pasword";
+                              return "Please enter password";
                             } else if (value.length < 7) {
-                              return "Must be more than 7 charater";
+                              return "Must be more than 7 character";
                             }
                             return null;
                           },
                           decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _isObscure
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Colors.grey,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isObscure = !_isObscure;
+                                    });
+                                  }),
                               labelText: 'Password',
                               labelStyle: TextStyle(
                                   fontFamily: 'Roboto', color: Colors.black),
@@ -353,7 +367,7 @@ class _signup_screenState extends State<signup_screen> {
                           controller: _city,
                           validator: (String? value) {
                             if (value!.isEmpty) {
-                              return "please ente city";
+                              return "Please enter city";
                             }
                             return null;
                           },
@@ -394,13 +408,13 @@ class _signup_screenState extends State<signup_screen> {
                       title: RichText(
                           text: TextSpan(children: <TextSpan>[
                         TextSpan(
-                            text: "By proceeding I agree to cupshop ",
+                            text: "By proceeding I agree to comshop ",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400)),
                         TextSpan(
-                          text: "\nuser Aggrement ",
+                          text: "\nuser Agreement ",
                           style: TextStyle(
                               color: Color.fromRGBO(252, 186, 24, 1),
                               fontSize: 14,
@@ -454,7 +468,7 @@ class _signup_screenState extends State<signup_screen> {
                               borderRadius: BorderRadius.circular(6)),
                           color: Color.fromRGBO(252, 186, 24, 1),
                           child: Text(
-                            'continiue',
+                            'Continue',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.white,

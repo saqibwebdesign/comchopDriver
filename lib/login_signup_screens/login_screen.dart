@@ -15,6 +15,7 @@ class login_screen extends StatefulWidget {
 class _login_screenState extends State<login_screen> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  bool _isObscure = true;
   @override
   void dispose() {
     _email.dispose();
@@ -24,7 +25,6 @@ class _login_screenState extends State<login_screen> {
 
   @override
   Widget build(BuildContext context) {
-    bool _isObscure = true;
     return Scaffold(
         backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         appBar: AppBar(
@@ -128,13 +128,17 @@ class _login_screenState extends State<login_screen> {
                       width: 334,
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
-                        child: TextField(
+                        child: TextFormField(
                           controller: _password,
+                          obscureText: _isObscure,
                           decoration: InputDecoration(
                               suffixIcon: IconButton(
-                                  icon: Icon(_isObscure
-                                      ? Icons.visibility
-                                      : Icons.visibility_off),
+                                  icon: Icon(
+                                    _isObscure
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Colors.grey,
+                                  ),
                                   onPressed: () {
                                     setState(() {
                                       _isObscure = !_isObscure;
@@ -191,7 +195,7 @@ class _login_screenState extends State<login_screen> {
                                   borderRadius: BorderRadius.circular(10)),
                               color: Color.fromRGBO(252, 186, 24, 1),
                               child: Text(
-                                'Signin',
+                                'Sign in',
                                 style: TextStyle(
                                   fontFamily: 'Roboto',
                                   color: Colors.white,

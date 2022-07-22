@@ -66,7 +66,7 @@ class _id_card_screenState extends State<id_card_screen> {
             children: [
               Center(
                   child: Text(
-                'Take a photo of your Social Security Card',
+                'Take a photo of your Identification Card',
                 style: TextStyle(fontWeight: FontWeight.w400, fontSize: 30),
               )),
               SizedBox(
