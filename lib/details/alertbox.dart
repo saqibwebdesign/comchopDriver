@@ -164,7 +164,7 @@ class modal {
                   height: 80,
                   child: Center(
                     child: Text(
-                      'are you sure you want to logout?',
+                      'are you sure you want to log out?',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w400),
                     ),
@@ -209,7 +209,7 @@ class modal {
                                   borderRadius: BorderRadius.circular(6)),
                               color: Color.fromRGBO(252, 186, 24, 1),
                               child: Text(
-                                'Logout',
+                                'Log out',
                                 style: TextStyle(
                                   fontFamily: 'Roboto',
                                   color: Colors.white,
